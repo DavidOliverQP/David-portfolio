@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David - Portfólio </title>
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/regular.min.css">
@@ -17,7 +19,7 @@
 
     <nav class="navbar scroll">
 
-        <div class="navbar-items ">
+        <div class="navbar-items">
 
             <div class="navbar-logo">
                 <a href="index.html">
@@ -25,33 +27,41 @@
                 </a>
             </div>
 
+            <div class="navbar-close">
+                <i class="fa-solid fa-x"></i>   
+            </div>
 
-            <ul class="navbar-texts">
 
-                <li class="navbar-texts-link active">
+            <ul class="navbar-texts" >
+
+                <li class="navbar-texts-link active" id="navbar-home">
                     <a href="#intro">Home</a>
                 </li>
 
-                <li class="navbar-texts-link">
+                <li class="navbar-texts-link" id="navbar-about">
                     <a href="#about">About</a>
                 </li>
 
-                <li class="navbar-texts-link">
+                <li class="navbar-texts-link" id="navbar-services">
                     <a href="#services">Services</a>
                 </li>
 
-                <li class="navbar-texts-link">
+                <li class="navbar-texts-link" id="navbar-experiences">
                     <a href="#experience">Experiences</a>
                 </li>
 
-                <li class="navbar-texts-link">
+                <li class="navbar-texts-link" id="navbar-projects">
                     <a href="#projects">Projects</a>
                 </li>
 
-                <li class="navbar-texts-link">
+                <li class="navbar-texts-link" id="navbar-contact">
                     <a href="#contact">Contact</a>
                 </li>
             </ul>
+
+            <div class="hamburguer-button">
+                <i class="fa-solid fa-bars"></i>
+            </div>
 
             <div class="toggle-button">
                 <label for="toggle" class="toggle">
@@ -179,6 +189,12 @@
 
             </div>
 
+
+        </div>
+    </div>
+
+    <div class="container service" id="services">
+        <div class="container-content">
             <h1 class="title" id="services">Services</h1>
 
             <div class="services" id="services">
@@ -189,7 +205,7 @@
                     <div class="card-title">
                         <h4>Developing and maintaining websites</h4>
                     </div>
-                    
+
                 </div>
                 <div class="card">
                     <div class="card-icon">
@@ -198,7 +214,7 @@
                     <div class="card-title">
                         <h4>Optimizing the user experience</h4>
                     </div>
-                   
+
                 </div>
                 <div class="card">
                     <div class="card-icon">
@@ -207,13 +223,13 @@
                     <div class="card-title">
                         <h4>Implementing design on mobile websites</h4>
                     </div>
-                   
+
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container experience" id="experience">
+    <div class="container experienceaa" id="experience">
         <div class="container-content">
             <h1 class="title">
                 Experience
@@ -221,30 +237,30 @@
 
             <div class="card-experience">
 
-                <div class="experience">
+                <div class="experiences">
 
                     <div class="line-experince-to-other">
                         <i class="fa-solid fa-suitcase"></i>
                         <div class="line"></div>
                     </div>
-                   
+
                     <div class="experience-info">
                         <small class="small-experience-year">03-2022 / 05-2022</small>
                         <h3 class="experience-job">Front-end developer internship</h3>
-                       <div class="experience-company">Grupo Barbosa & cia </div> 
+                        <div class="experience-company">Grupo Barbosa & cia </div>
                     </div>
                 </div>
-                <div class="experience">
+                <div class="experiences">
 
                     <div class="line-experince-to-other">
                         <i class="fa-solid fa-suitcase"></i>
                         <div class="line"></div>
                     </div>
-                   
+
                     <div class="experience-info">
                         <small class="small-experience-year">09-2022 / 11-2022</small>
                         <h3 class="experience-job">Back-end junior developer</h3>
-                       <div class="experience-company">Goolhub</div> 
+                        <div class="experience-company">Goolhub</div>
                     </div>
 
                 </div>
@@ -253,10 +269,121 @@
     </div>
 
     <div class="container projects" id="projects">
-        <div class="container-content"></div>
+        <div class="container-content">
+
+
+            <h1 class="title" id="services">Projects</h1>
+            <div class="projects" id="projects">
+                <div class="owl-carousel owl-theme carouselCe">
+
+                    <div class="item">
+                        <a href="">
+                            <div class="card" id="yoolo">
+
+                                <div class="card-title">
+                                    <h4>Yoolo Website</h4>
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="">
+                            <div class="card" id="tictactoe">
+
+                                <div class="card-title">
+                                    <h4>Tic tac toe with MC's</h4>
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="">
+                            <div class="card" id="valocrud">
+
+                                <div class="card-title">
+                                    <h4>Valocrud</h4>
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="">
+                            <div class="card" id="gameofthrones">
+
+                                <div class="card-title">
+                                    <h4>Game of Thrones Infos</h4>
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+
+
+
+                    <div class="item">
+                        <a href="">
+                            <div class="card" id="mandalorian">
+                                
+                                <div class="card-title">
+                                    <h4>Mandalorian landing page</h4>
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
     </div>
 
+    <div class="container contact" id="contact">
+        <div class="container-content">
+            <h1 class="title">Contact</h1>
+
+            <form class="form">
+                <div class="form-control">
+                    <input type="text" class="input-control" placeholder="Name">
+                    <small class="input-error">Invalid Value</small>
+                </div>
+                <div class="form-control">
+                    <input type="text" class="input-control" placeholder="E-mail">
+                    <small class="input-error">Invalid Value</small>
+                </div>
+                <div class="form-control">
+                    <input type="text" class="input-control" placeholder="Phone">
+                    <small class="input-error">Invalid Value</small>
+                </div>
+
+                <div class="form-control">
+                    <input type="text" class="input-control textarea" placeholder="About">
+                    <small class="input-error">Invalid Value</small>
+                </div>
+
+                <button class="button-form" type="button"><i class="fa-solid fa-paper-plane"></i>Send message</button>
+            </form>
+
+
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="./script.js"></script>
+    <script>
+
+    </script>
 </body>
 
 </html>

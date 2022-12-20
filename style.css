@@ -188,6 +188,15 @@ ul {
     margin-right: 5vh;
 }
 
+.social-icon i:hover{
+   transition: background .2s,
+   padding .2s;
+   background: var(--primary-color-light);
+   padding: 5px;
+   border-radius: 10px;
+  
+}
+
 .intro li {
     margin: 0px 10px;
     font-size: 1.3rem;
@@ -195,6 +204,8 @@ ul {
 
 
 .person-button {
+    font-family: var(--font-family);
+    font-weight: 600;
     background-color: var(--primary-color-light);
     color: white;
     border: none;
@@ -251,12 +262,24 @@ ul {
     padding: 20px 25px;
 }
 
-.light-theme .apresentation-skills {
-    box-shadow: var(--box-shadow-1);
+
+.light-theme .apresentation-skills{
+    box-shadow: var(--box-shadow-2)
+}
+
+.light-theme .apresentation-skills:hover {
+    transition: box-shadow .2s;
+    box-shadow: var(--box-shadow-4);
 }
 
 .dark-theme .apresentation-skills {
     box-shadow: var(--box-shadow-2);
+}
+
+
+.dark-theme .apresentation-skills:hover{
+    transition: box-shadow .2s;
+    box-shadow: var(--box-shadow-3);
 }
 
 .apresentation-skills .left-side {
@@ -473,6 +496,22 @@ ul {
     flex-direction: column;
     align-items: flex-start;
     overflow: hidden;
+   
+}
+
+
+.dark-theme .card-experience{
+    box-shadow: var(--box-shadow-2);
+}
+
+.dark-theme .card-experience:hover{
+    transition: box-shadow .2s;
+    box-shadow: var(--box-shadow-3);
+}
+
+.light-theme .card-experience:hover{
+    transition: box-shadow .2s;
+    box-shadow: var(--box-shadow-4);
 }
 
 .experiences {
@@ -588,6 +627,25 @@ ul {
     margin-bottom: 10vh;
     border-radius: 10px;
     padding: 100px;
+    
+}
+
+.light-theme .form{
+    box-shadow: var(--box-shadow-2);
+}
+
+.light-theme .form:hover{
+    transition: box-shadow .2s;
+    box-shadow: var(--box-shadow-4);
+}
+
+.dark-theme .form{
+    box-shadow: var(--box-shadow-2);
+}
+
+.dark-theme .form:hover{
+    transition: box-shadow .2s;
+    box-shadow: var(--box-shadow-3);
 }
 
 
@@ -616,8 +674,13 @@ ul {
 
 .form-control small{
     color: var(--red-color);
-    margin-bottom: 2vh;
+    
     display: none;
+    align-items: center;
+}
+
+.form-control.error small{
+    display: flex!important;
 }
 
 .form-control input::placeholder{
@@ -627,6 +690,9 @@ ul {
     font-weight: 600;
 }
 
+.form-control i{
+    margin-right: 5px;
+}
 
 
 .textarea{
@@ -934,6 +1000,7 @@ body.light-theme {
 
     .card-experience small{
         font-size: 0.6rem;
+        white-space: nowrap;
     }
 
     .experience-job{

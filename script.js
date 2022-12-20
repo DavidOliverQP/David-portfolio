@@ -196,6 +196,32 @@ const switchButton = {
     
 }
 
+const valideForm = {
+    getFormValues(){
+
+        let name = document.getElementById('name');
+        let email = document.getElementById('Email');
+        let phone = document.getElementById('phone');
+
+        
+
+        this.validateFormValues(name.value,email.value,phone.value);
+
+    },
+    
+    validateFormValues(name,email,phone){
+
+       if(name.length > 2){
+            
+       }
+
+    },
+
+    errorForm(input){
+
+    }
+}
+
 
 function switchTheme(button) {
     let buttonCall = button;
@@ -252,6 +278,9 @@ buttonOpenNavbar.addEventListener('click', function(){navbarInteractive.openNavb
 
 const buttonCloseNavbar = document.querySelector('.navbar-close');
 buttonCloseNavbar.addEventListener('click', function(){navbarInteractive.closeNavbar()})
+
+const formSend = document.querySelector('.button-form');
+formSend.addEventListener('click', function(){valideForm.getFormValues()})
 
 
 

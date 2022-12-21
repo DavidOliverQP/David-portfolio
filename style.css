@@ -88,6 +88,7 @@ nav {
     align-items: center;
 }
 
+
 .navbar-close{
     display: none;
 }
@@ -108,6 +109,9 @@ nav {
 .navbar-texts {
     display: flex;
     flex-direction: row;
+    justify-content: start;
+    align-items: flex-start;
+    text-align: start;
 }
 
 .navbar-texts-link {
@@ -122,6 +126,14 @@ nav {
     color: var(--primary-color-light);
     font-weight: 700;
     font-size: 1.3rem;
+}
+
+.navbar-items.show{
+    transition: all 0.4s;
+}
+
+.navbar-items .navbar-texts-link i{
+    display: none;
 }
 
 .toggle {
@@ -957,6 +969,10 @@ body.light-theme {
 
 @media screen and (max-width :780px) {
 
+    .navbar *{
+        transition: 0.2s;
+    }
+
     .navbar-texts{
         display: none;
     }
@@ -971,39 +987,66 @@ body.light-theme {
         font-size: 0.8rem;
     }
 
-    .light-theme .navbar-items.show .navbar-texts{
-        background-color: var(--white-color);
-        
-    }
+  
 
     .light-theme .navbar-texts-link a {
         color: var(--black-color);
     }
 
-    .dark-theme .navbar-items.show .navbar-texts{
-        background-color: var(--black-color);
-    }
-
+  
     .light-theme .navbar-texts-link a:hover{
         color: var(--third-color)!important;
     }
 
-    .navbar-items.show  .navbar-texts{
-        
+    .light-theme .navbar-items.show {
+         transition: background 0.4s !important;
+        background-color: var(--white-color);
+    }
+
+    .dark-theme .navbar-items.show{
+        transition: background 0.4s !important;
+        background-color: var(--black-color);
+    }
+
+    .navbar-items.show{
+        width: 100vw;
+        height: 50vh;
         width: 100%;
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+    }
+
+    .navbar-items.show  .navbar-texts{
+
+        
         position: absolute;
         padding-top: 40px;
         padding-bottom: 10px;
         display: flex;
         flex-direction: column;
-        font-size: 0.5rem;
-        
+        transition: all 0.5;
         
         
     }
 
+    .navbar-texts-link{
+        margin-bottom: 10px;
+    }
+
     .navbar-items.show .navbar-texts-link a{
-       font-size: 0.65rem;
+       font-size: 1rem;
+      
+    }
+
+    .navbar-items.show .navbar-logo{
+        display: none;
+    }
+
+    .navbar-items.show .hamburguer-button{
+        display: none;
     }
 
     .navbar-texts-link{
@@ -1117,6 +1160,25 @@ body.light-theme {
         position: absolute;
         display: flex;
         z-index: 3;
+        top: 150px;
         right: 48px;
     }
+
+    .navbar-items.show .toggle-button{
+        position: absolute;
+        right: 0px;
+        top: 200px;
+    }
+
+    
+
+    .navbar-items.show .navbar-texts-link i{
+        display: initial!important;
+        flex-direction: row;
+        margin-right: 10px;
+        font-size: 0.8rem;
+        padding-right: 5px;
+    }
+
+    
 }

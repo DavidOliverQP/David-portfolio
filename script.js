@@ -51,22 +51,22 @@ const startInteractivity = () => {
 
 
     const darkButton = document.querySelectorAll('i.fa-regular');
-    darkButton.forEach(button => button.addEventListener('click', function () { switchTheme(button) }));
+    darkButton.forEach(button => button.addEventListener('click', () => { switchTheme(button) }));
     
     const navbarLinkActive = document.querySelectorAll('.navbar-texts-link');
-    navbarLinkActive.forEach(button => button.addEventListener('click', function () { switchButton.getButton(button) }));
+    navbarLinkActive.forEach(button => button.addEventListener('click', () => { switchButton.getButton(button) }));
     
     const scrollHoverContainer = document.querySelectorAll('.container');
-    scrollHoverContainer.forEach(container => container.addEventListener('mouseover', function () { switchScroll.getScroll(container) }))
+    scrollHoverContainer.forEach(container => container.addEventListener('mouseover', () => { switchScroll.getScroll(container) }))
     
     const buttonOpenNavbar = document.querySelector('.hamburguer-button');
-    buttonOpenNavbar.addEventListener('click', function () { navbarInteractive.openNavbar() })
+    buttonOpenNavbar.addEventListener('click', () => { navbarInteractive.openNavbar() })
     
     const buttonCloseNavbar = document.querySelector('.navbar-close');
-    buttonCloseNavbar.addEventListener('click', function () { navbarInteractive.closeNavbar() })
+    buttonCloseNavbar.addEventListener('click', () => { navbarInteractive.closeNavbar() })
     
     const formSend = document.querySelector('.button-form');
-    formSend.addEventListener('click', function () { valideForm.validateFormValues() })
+    formSend.addEventListener('click', () => { valideForm.validateFormValues() })
     
 
 
@@ -431,6 +431,7 @@ function validateEmail(email) {
 
 
 startInteractivity();
+
 
 
 $(document).ready(function () {

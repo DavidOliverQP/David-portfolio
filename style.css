@@ -694,7 +694,7 @@ ul {
 
 .form-control.error input{
     transition: border-bottom .2s;
-    color: var(--primary-color-light);
+    color: var(--white-color);
     border-bottom: 2px solid var(--primary-color-light);
 }
 

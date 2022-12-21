@@ -3,6 +3,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import { getFirestore, setDoc, addDoc, doc, collection } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyB-ydXjwl-z25YZX7AkBnnVDbJSyytnPqc",
     authDomain: "portfolio-contact-1ad87.firebaseapp.com",
@@ -281,7 +283,7 @@ const valideForm = {
             }
         }
 
-        if ((phoneInput.value).length <= 9) {
+        if ((phoneInput.value).length < 11 || (phoneInput.value).length > 11) {
             toastr.error('Invalid Phone')
             this.errorForm(phoneInput);
         }
@@ -290,11 +292,11 @@ const valideForm = {
             this.correctForm(phoneInput);
         }
 
-        if (!(nameInput.value).length <= 2 && validateEmail(emailInput.value) == false && (phoneInput.value).length <= 9) {
+        if ((nameInput.value).length <= 2 && validateEmail(emailInput.value) == false && (phoneInput.value).length < 11 && (phoneInput.value).length > 11) {
             return;
         }
 
-        else {
+        else if ((nameInput.value).length > 2 && validateEmail(emailInput.value) != false && (phoneInput.value).length == 11) {
             this.sendForm(nameInput.value, emailInput.value, phoneInput.value, message.value);
         }
 
@@ -335,6 +337,14 @@ const valideForm = {
         let mm = String(today.getMonth() + 1).padStart(2, '0');
         let yyyy = today.getFullYear();
 
+        let hora = today.getHours(); // => 9
+        let minuts = today.getMinutes(); // =>  30
+        let segundos = today.getSeconds(); // => 51
+
+        let horas = "";
+
+        horas = hora + ":" + minuts + ":" + segundos;
+
         today = dd + '/' + mm + '/' + yyyy;
 
         addDoc(collection(db, "contact"), {
@@ -343,6 +353,7 @@ const valideForm = {
             phone: validatePhone,
             message: validateMessage,
             data: today,
+            hora: horas,
         })
 
         toastr["success"]("Message sent")

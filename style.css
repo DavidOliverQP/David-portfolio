@@ -21,7 +21,7 @@
     --box-shadow-1: 1px 3px 15px rgba(0, 0, 0, 0.514);
     --box-shadow-2: 1px 3px 5px rgba(0, 0, 0, 0.822);
     --box-shadow-3: 0px 2px 2px rgb(255, 255, 255);
-    --box-shadow-4: 1px 5px 1px rgba(119, 0, 79, 0.514);
+    --box-shadow-4: 1px 5px 1px var(--primary-color-light);
 }
 
 html,
@@ -95,6 +95,11 @@ nav {
 .light-theme .navbar-close i{
     color: var(--black-color);
 }
+
+.light-theme .navbar.scroll a:hover{
+    color: var(--third-color)!important;
+}
+
 
 .dark-theme .navbar-close i{
     color: var(--white-color);
@@ -189,10 +194,10 @@ ul {
 }
 
 .social-icon i:hover{
-   transition: background .2s,
+   transition: background .4s,
    padding .2s;
    background: var(--primary-color-light);
-   padding: 5px;
+   padding: 5px 5px;
    border-radius: 10px;
   
 }
@@ -673,14 +678,29 @@ ul {
 
 
 .form-control small{
-    color: var(--red-color);
+    color: var(--primary-color-light);
     
     display: none;
     align-items: center;
 }
 
+.form-control.error *{
+    transition: all 0.4s;
+}
+
 .form-control.error small{
     display: flex!important;
+}
+
+.form-control.error input{
+    transition: border-bottom .2s;
+    color: var(--primary-color-light);
+    border-bottom: 2px solid var(--primary-color-light);
+}
+
+.form-control.error input::placeholder{
+    color: var(--primary-color-light);
+    transition: .4s;
 }
 
 .form-control input::placeholder{
@@ -688,7 +708,28 @@ ul {
     color: var(--white-color);
     padding: -10px;
     font-weight: 600;
+    transition: 0.2s;
 }
+
+input:-webkit-autofill { 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--white-color);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+
+/* Cor do texto do autocomplete */
+
 
 .form-control i{
     margin-right: 5px;
@@ -736,6 +777,11 @@ ul {
 
 .button-form i{
     margin-right: 10px;
+}
+
+.toast-error {
+    background-color: var(--primary-color);
+   
 }
 
 
@@ -882,6 +928,32 @@ body.light-theme {
     display: flex!important;
 }
 
+.footer{
+    width: 100vw;
+    height: 150px;
+    background:  var(--secundary-color-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+   
+}
+
+.footer h3{
+    cursor: default;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: -15px;
+}
+
+.footer ul li{
+    margin: 10px;
+}
+
+.footer i{
+    font-size: 1.5rem;
+}
+
 
 @media screen and (max-width :780px) {
 
@@ -910,6 +982,10 @@ body.light-theme {
 
     .dark-theme .navbar-items.show .navbar-texts{
         background-color: var(--black-color);
+    }
+
+    .light-theme .navbar-texts-link a:hover{
+        color: var(--third-color)!important;
     }
 
     .navbar-items.show  .navbar-texts{

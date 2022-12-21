@@ -91,6 +91,7 @@ nav {
 
 .navbar-close{
     display: none;
+    cursor: pointer;
 }
 
 .light-theme .navbar-close i{
@@ -109,9 +110,9 @@ nav {
 .navbar-texts {
     display: flex;
     flex-direction: row;
-    justify-content: start;
-    align-items: flex-start;
-    text-align: start;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .navbar-texts-link {
@@ -926,7 +927,10 @@ body.light-theme {
     display: none;
     margin-left: 50vw;
     justify-content: center;
+    cursor: pointer;
 }
+
+
 
 .light-theme .scroll .hamburguer-button{
     color: var(--black-color);
@@ -978,8 +982,9 @@ body.light-theme {
     }
    
     .hamburguer-button {
+        position: absolute;
+        right: 45px;
         display: flex;
-        margin-left: 50vw;
         justify-content: center;
     }
 
@@ -1021,7 +1026,9 @@ body.light-theme {
 
     .navbar-items.show  .navbar-texts{
 
-        
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: start;
         position: absolute;
         padding-top: 40px;
         padding-bottom: 10px;
@@ -1167,7 +1174,7 @@ body.light-theme {
     .navbar-items.show .toggle-button{
         position: absolute;
         right: 0px;
-        top: 200px;
+        top: 250px;
     }
 
     

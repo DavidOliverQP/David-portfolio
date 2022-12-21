@@ -453,7 +453,7 @@ $(document).ready(function () {
         },
         autoplay: true,
         autoplayTimeout: 1500,
-
+        autoplayHoverPause:true,
 
     });
 })

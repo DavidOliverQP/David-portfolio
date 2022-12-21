@@ -3,8 +3,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import { getFirestore, setDoc, addDoc, doc, collection } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 
-
-
 const firebaseConfig = {
     apiKey: "AIzaSyB-ydXjwl-z25YZX7AkBnnVDbJSyytnPqc",
     authDomain: "portfolio-contact-1ad87.firebaseapp.com",
@@ -41,7 +39,7 @@ window.addEventListener('load', () => {
 
 })
 
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll',  () => {
     let navbar = document.querySelector('.navbar');
 
     let windowPosition = window.scrollY > 0;
@@ -49,7 +47,30 @@ window.addEventListener('scroll', function () {
     navbar.classList.toggle('scroll', windowPosition);
 });
 
+const startInteractivity = () => {
 
+
+    const darkButton = document.querySelectorAll('i.fa-regular');
+    darkButton.forEach(button => button.addEventListener('click', function () { switchTheme(button) }));
+    
+    const navbarLinkActive = document.querySelectorAll('.navbar-texts-link');
+    navbarLinkActive.forEach(button => button.addEventListener('click', function () { switchButton.getButton(button) }));
+    
+    const scrollHoverContainer = document.querySelectorAll('.container');
+    scrollHoverContainer.forEach(container => container.addEventListener('mouseover', function () { switchScroll.getScroll(container) }))
+    
+    const buttonOpenNavbar = document.querySelector('.hamburguer-button');
+    buttonOpenNavbar.addEventListener('click', function () { navbarInteractive.openNavbar() })
+    
+    const buttonCloseNavbar = document.querySelector('.navbar-close');
+    buttonCloseNavbar.addEventListener('click', function () { navbarInteractive.closeNavbar() })
+    
+    const formSend = document.querySelector('.button-form');
+    formSend.addEventListener('click', function () { valideForm.validateFormValues() })
+    
+
+
+}
 
 const navbarInteractive = {
 
@@ -361,6 +382,7 @@ const valideForm = {
     }
 }
 
+
 function switchTheme(button) {
 
     let buttonCall = button;
@@ -407,25 +429,8 @@ function validateEmail(email) {
     return re.test(email);
 }
 
-const darkButton = document.querySelectorAll('i.fa-regular');
-darkButton.forEach(button => button.addEventListener('click', function () { switchTheme(button) }));
 
-const navbarLinkActive = document.querySelectorAll('.navbar-texts-link');
-navbarLinkActive.forEach(button => button.addEventListener('click', function () { switchButton.getButton(button) }));
-
-const scrollHoverContainer = document.querySelectorAll('.container');
-scrollHoverContainer.forEach(container => container.addEventListener('mouseover', function () { switchScroll.getScroll(container) }))
-
-const buttonOpenNavbar = document.querySelector('.hamburguer-button');
-buttonOpenNavbar.addEventListener('click', function () { navbarInteractive.openNavbar() })
-
-const buttonCloseNavbar = document.querySelector('.navbar-close');
-buttonCloseNavbar.addEventListener('click', function () { navbarInteractive.closeNavbar() })
-
-const formSend = document.querySelector('.button-form');
-formSend.addEventListener('click', function () { valideForm.validateFormValues() })
-
-
+startInteractivity();
 
 
 $(document).ready(function () {

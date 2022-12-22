@@ -193,8 +193,26 @@ label.toggle {
 .person-perfil {
     width: 150px;
     height: 150px;
-    background-color: var(--third-color);
+    background: linear-gradient(var(--third-color)10%, var(--primary-color)90%), var(--third-color);
     border-radius: 50%;
+    box-shadow: var(--box-shadow-1);
+    margin-bottom: 2vh;
+    overflow: hidden;
+}
+
+.person-perfil:hover {
+    border-bottom: 2px solid var(--third-color);
+    transition: 0.1s;
+}
+
+.person-perfil img{
+    width: 100%;
+}
+
+.person-profission{
+    font-size: 1.5rem;
+    cursor: default;
+    letter-spacing: 1px;
 }
 
 
@@ -265,10 +283,16 @@ ul {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background-color: var(--third-color);
+    background: linear-gradient(var(--third-color)10%, var(--primary-color)90%), var(--third-color);;
     display: flex;
     justify-content: center;
     margin-left: 10px;
+   
+    overflow: hidden;
+}
+
+.aboutme-person img{
+    width: 100%;
 }
 
 .apresentation-skills {
@@ -1187,5 +1211,12 @@ body.light-theme {
         padding-right: 5px;
     }
 
+    .footer h3{
+        font-size: 0.6rem;
+    }
+
+    .person-profission{
+        font-size: 1rem;
+    }
     
 }

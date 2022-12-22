@@ -68,9 +68,14 @@ const startInteractivity = () => {
     const formSend = document.querySelector('.button-form');
     formSend.addEventListener('click', () => { valideForm.validateFormValues() })
     
+    textWritting();
+
+    
 
 
 }
+
+
 
 const navbarInteractive = {
 
@@ -427,6 +432,22 @@ function switchTheme(button) {
 function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
+}
+
+function textWritting(){  
+
+    let i = 0, text = "I'm David a Front end Developer";
+
+    function typing(){
+        document.querySelector('.person-profission small').innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing,70);
+
+    }
+
+    typing();
+
+
 }
 
 

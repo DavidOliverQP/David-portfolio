@@ -173,7 +173,7 @@ label.toggle {
 }
 
 .container.intro {
-    background: url(./assets/pikrepo.jpg);
+    background: url(./assets/intro-background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;

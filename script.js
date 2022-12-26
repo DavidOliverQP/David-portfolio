@@ -67,6 +67,9 @@ const startInteractivity = () => {
     
     const formSend = document.querySelector('.button-form');
     formSend.addEventListener('click', () => { valideForm.validateFormValues() })
+
+    const changeValueGet = document.querySelectorAll('.choice-donate');
+    changeValueGet.forEach(button => button.addEventListener('click', () => { button}))
     
     textWritting();
 
@@ -386,6 +389,8 @@ const valideForm = {
 
     }
 }
+
+
 
 
 function switchTheme(button) {

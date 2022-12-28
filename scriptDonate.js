@@ -241,9 +241,7 @@ const valideForm = {
 
     sendForm(name, email, message, valor) {
 
-        
-
-
+    
         let validateName = name;
         let validateEmail = email;
         let validateMessage = message;
@@ -284,26 +282,39 @@ const renderQrCode = {
 
         let h3 = document.querySelector('.qrcode-render h3');
 
-        h3.innerHTML = "R$" + valor + ",00";
+        let valorReceive = valor.toString();
 
+        if(valorReceive.includes('qualquer')){
+            h3.innerHTML = "Qualquer valor";
+        }
+
+        else{
+            h3.innerHTML = "R$" + valor + ",00";
+        }
+           
         let chavePix = ""
 
-        if (valor == 2) {
-            chavePix = "00020126580014br.gov.bcb.pix01369269cebe-6906-43b2-a8dc-834dc7b06ac552040000530398654042.005802BR5925DAVID DENISSON DE OLIVEIR6015Sao Jose da Laj6211050726f787963043FA2"
+        switch(valor){
+            case 2:{
+                chavePix = "00020126580014br.gov.bcb.pix01369269cebe-6906-43b2-a8dc-834dc7b06ac552040000530398654042.005802BR5925DAVID DENISSON DE OLIVEIR6015Sao Jose da Laj6211050726f787963043FA2";
+                break;
+            }
+            case 5:{
+                chavePix = "00020126580014br.gov.bcb.pix01369269cebe-6906-43b2-a8dc-834dc7b06ac552040000530398654045.005802BR5925DAVID DENISSON DE OLIVEIR6015Sao Jose da Laj6211050726f78796304F8EC";
+                break;
+            }
+
+            case 10:{
+                chavePix = "00020126580014br.gov.bcb.pix01369269cebe-6906-43b2-a8dc-834dc7b06ac5520400005303986540510.005802BR5925DAVID DENISSON DE OLIVEIR6015Sao Jose da Laj6211050726f787963048865";
+                break;
+            }
+
+            default:{
+                chavePix = "00020126580014br.gov.bcb.pix01369269cebe-6906-43b2-a8dc-834dc7b06ac55204000053039865802BR5925DAVID DENISSON DE OLIVEIR6015Sao Jose da Laj6211050726f787963045B04";
+                break;
+            }
         }
 
-        else if (valor == 5) {
-
-            chavePix = "00020126580014br.gov.bcb.pix01369269cebe-6906-43b2-a8dc-834dc7b06ac552040000530398654045.005802BR5925DAVID DENISSON DE OLIVEIR6015Sao Jose da Laj6211050726f78796304F8EC"
-        }
-
-        else if (valor == 10) {
-            chavePix = "00020126580014br.gov.bcb.pix01369269cebe-6906-43b2-a8dc-834dc7b06ac5520400005303986540510.005802BR5925DAVID DENISSON DE OLIVEIR6015Sao Jose da Laj6211050726f787963048865";
-        }
-
-        else {
-            chavePix = "00020126580014br.gov.bcb.pix01369269cebe-6906-43b2-a8dc-834dc7b06ac5520400005303986540510.005802BR5925DAVID DENISSON DE OLIVEIR6015Sao Jose da Laj6211050726f787963048865";
-        }
 
         var qrcode = new QRCode("qrcode", {
             colorDark: "#000000",

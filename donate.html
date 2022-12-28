@@ -49,12 +49,28 @@
                     <textarea name="" id="message" placeholder="Message"></textarea>
                 </div>
 
-             
+
 
                 <button class="button-form" type="button"><i class="fa-solid fa-paper-plane"></i>Send</button>
 
 
             </form>
+
+
+            <div class="container-qrcode hide">
+                <i class="fa-solid fa-xmark"></i>
+                <div class="qrcode-render">
+                    <h2>Você tem 15 minutos antes que expire o QR</h2>
+                    <div class="qrcode-img">
+                        <div id="qrcode"></div>
+                    </div>
+                    <h5>Copie e cole</h5>
+                    <div class="copyecut">
+                        <input type="text" name="chave pix" value="teste" id="chave-pix" readonly>
+                        <i class="fa-regular fa-copy"></i>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
@@ -90,6 +106,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js"></script>
     <script type="module" src="./scriptDonate.js"></script>
 </body>
 

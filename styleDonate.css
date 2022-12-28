@@ -97,6 +97,75 @@
    
 }
 
+.container-qrcode{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(rgba(0, 0, 0, 0.192),rgba(0, 0, 0, 0.842));
+    display: flex;
+    justify-content: center;
+}
+
+.container-qrcode .fa-xmark{
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    font-size: 1.5rem;
+}
+
+.qrcode-render{
+    position: absolute;
+    background-color: var(--secundary-color);
+    border-radius: 10px;
+    width: 70vw;
+    height: 90vh;
+    top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qrcode-img{
+    margin-top: 5vh;
+    width: 200px;
+    margin-bottom: 5vh;
+   
+}
+
+.copyecut{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+}
+
+.copyecut input{
+    outline: none;
+    width: 50%;
+}
+
+.copyecut i{
+    margin-top: 4px;
+    color: var(--white-color);
+    padding: 0px 10px;
+    border-radius: 2px;
+}
+
+#qrcode img{
+    width:100%;
+    
+  }
+
+.hide{
+    display: none!important;
+}
+
+.show{
+    display: flex!important;
+}
 
 @media screen and (max-width: 780px) {
     .container.donate h1{
@@ -118,6 +187,14 @@
 
     .form{
         width: 60%;
+    }
+
+    .qrcode-render{
+        width: 90vw;
+    }
+
+    .qrcode-render h2{
+        font-size: 0.7rem;
     }
 }
 

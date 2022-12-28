@@ -49,6 +49,9 @@ const startInteractivity = () => {
     const changeButton = document.querySelectorAll('.choice-donate');
     changeButton.forEach(button => button.addEventListener('click', () => { switchButton.changeButton(button) }))
 
+    const closeModal = document.querySelector('.fa-xmark');
+    closeModal.addEventListener('click', ()=>{ renderQrCode.closeModal()})
+
 
 }
 
@@ -58,33 +61,33 @@ const switchButton = {
 
     getValueButton() {
 
-        
+
 
         let buttonValue = document.querySelector('.choice-donate.actives')
 
-        if(buttonValue != null){
+        if (buttonValue != null) {
             let buttonReceive = buttonValue.innerHTML;
 
-            if(buttonReceive.includes('Qualquer')){
+            if (buttonReceive.includes('Qualquer')) {
                 this.getButtonActive();
                 buttonReceive = "qualquer valor";
                 return buttonReceive;
             }
-    
-            else{
-                
+
+            else {
+
                 buttonReceive = Number(buttonReceive.replace('R$', '').replace(',00', ''));
-    
+
             }
-    
+
             return buttonReceive;
         }
 
-        else{
+        else {
             return
         }
 
-       
+
 
 
     },
@@ -106,18 +109,18 @@ const switchButton = {
         let buttonGet = button;
         let buttonReceive = button.innerHTML;
 
-        if(buttonReceive.includes('Qualquer')){
+        if (buttonReceive.includes('Qualquer')) {
             this.getButtonActive();
             buttonGet = buttonGet.classList.add('actives');
             return;
         }
 
-        else{
-            
+        else {
+
             buttonReceive = Number(buttonReceive.replace('R$', '').replace(',00', ''));
 
         }
-       
+
 
 
         switch (buttonReceive) {
@@ -234,6 +237,9 @@ const valideForm = {
 
     sendForm(name, email, message, valor) {
 
+        renderQrCode.qrCodeRender(valor)
+
+
         let validateName = name;
         let validateEmail = email;
         let validateMessage = message;
@@ -270,11 +276,66 @@ const valideForm = {
 
 
 
-
 function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
 }
+
+const renderQrCode = {
+    qrCodeRender(valor) {
+
+        let chavePix = ""
+
+        if (valor == 2) {
+            chavePix = "00020126580014br.gov.bcb.pix01369269cebe-6906-43b2-a8dc-834dc7b06ac552040000530398654042.005802BR5925DAVID DENISSON DE OLIVEIR6015Sao Jose da Laj6211050726f787963043FA2"
+        }
+
+        else if (valor == 5) {
+
+            chavePix = "00020126580014br.gov.bcb.pix01369269cebe-6906-43b2-a8dc-834dc7b06ac552040000530398654045.005802BR5925DAVID DENISSON DE OLIVEIR6015Sao Jose da Laj6211050726f78796304F8EC"
+        }
+
+        else if (valor == 10) {
+            chavePix = "00020126580014br.gov.bcb.pix01369269cebe-6906-43b2-a8dc-834dc7b06ac5520400005303986540510.005802BR5925DAVID DENISSON DE OLIVEIR6015Sao Jose da Laj6211050726f787963048865";
+        }
+
+        else {
+            chavePix = "00020126580014br.gov.bcb.pix01369269cebe-6906-43b2-a8dc-834dc7b06ac5520400005303986540510.005802BR5925DAVID DENISSON DE OLIVEIR6015Sao Jose da Laj6211050726f787963048865";
+        }
+
+        var qrcode = new QRCode("qrcode", {
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+
+
+
+        qrcode.makeCode(chavePix);
+
+        let inputQr = document.querySelector('#chave-pix');
+
+        inputQr.defaultValue = chavePix;
+
+        let bodyContent = document.querySelector(".container-qrcode")
+        bodyContent.classList.remove('hide');
+
+    },
+
+    closeModal() {
+        let bodyContent = document.querySelector(".container-qrcode")
+
+        if (bodyContent != null) {
+            bodyContent.classList.add('hide');
+        }
+        else{
+            return
+        }
+    }
+
+}
+
+
 
 
 

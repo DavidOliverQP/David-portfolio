@@ -98,6 +98,7 @@
 }
 
 .container-qrcode{
+    
     position: absolute;
     width: 100%;
     height: 100%;
@@ -109,14 +110,14 @@
 
 .container-qrcode .fa-xmark{
     position: absolute;
-    top: 75px;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    top: 60px;
+    right: 80px;
     z-index: 2;
     font-size: 1.5rem;
 }
 
 .qrcode-render{
+   
     position: absolute;
     background-color: var(--secundary-color);
     border-radius: 10px;
@@ -206,4 +207,10 @@
     }
 }
 
+
+@media screen and (max-width: 480px) {
+    .container-qrcode .fa-xmark{
+        right: 40px;
+    }
+}
 

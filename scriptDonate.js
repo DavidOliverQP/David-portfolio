@@ -282,6 +282,10 @@ const valideForm = {
 const renderQrCode = {
     qrCodeRender(valor) {
 
+        let h3 = document.querySelector('.qrcode-render h3');
+
+        h3.innerHTML = "R$" + valor + ",00";
+
         let chavePix = ""
 
         if (valor == 2) {

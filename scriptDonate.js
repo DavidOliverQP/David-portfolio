@@ -50,7 +50,10 @@ const startInteractivity = () => {
     changeButton.forEach(button => button.addEventListener('click', () => { switchButton.changeButton(button) }))
 
     const closeModal = document.querySelector('.fa-xmark');
-    closeModal.addEventListener('click', ()=>{ renderQrCode.closeModal()})
+    closeModal.addEventListener('click', ()=>{ renderQrCode.closeModal()});
+
+    const copyQrValue = document.querySelector('.fa-copy');
+    copyQrValue.addEventListener('click', () =>{ renderQrCode.copieValue()});
 
 
 }
@@ -170,7 +173,7 @@ const valideForm = {
         let valor = switchButton.getValueButton();
 
         if ((nameInput.value).length <= 2) {
-            console.log(nameInput)
+          
             toastr.error('Invalid Name')
             this.errorForm(nameInput);
 
@@ -273,14 +276,6 @@ const valideForm = {
     }
 }
 
-
-
-
-function validateEmail(email) {
-    var re = /\S+@\S+\.\S+/;
-    return re.test(email);
-}
-
 const renderQrCode = {
     qrCodeRender(valor) {
 
@@ -326,14 +321,33 @@ const renderQrCode = {
         let bodyContent = document.querySelector(".container-qrcode")
 
         if (bodyContent != null) {
+            window.location.reload();
             bodyContent.classList.add('hide');
         }
         else{
             return
         }
+    },
+
+    copieValue(){
+        let textoCopiado = document.getElementById("chave-pix");
+        textoCopiado.select();
+        textoCopiado.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        toastr["success"]("Copiado com Sucesso")
     }
 
 }
+
+
+
+
+function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
+
 
 
 

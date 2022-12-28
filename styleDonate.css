@@ -129,6 +129,7 @@
 }
 
 .qrcode-img{
+  
     margin-top: 5vh;
     width: 200px;
     margin-bottom: 5vh;
@@ -165,6 +166,10 @@
 
 .show{
     display: flex!important;
+}
+
+.fa-copy, .fa-xmark{
+    cursor: pointer;
 }
 
 @media screen and (max-width: 780px) {

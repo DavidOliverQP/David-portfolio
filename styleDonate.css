@@ -115,6 +115,10 @@
     .form-control{
         width: 100%;
     }
+
+    .form{
+        width: 60%;
+    }
 }
 
 

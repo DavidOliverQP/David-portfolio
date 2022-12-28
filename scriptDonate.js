@@ -54,6 +54,7 @@ const startInteractivity = () => {
 
     const copyQrValue = document.querySelector('.fa-copy');
     copyQrValue.addEventListener('click', () =>{ renderQrCode.copieValue()});
+ 
 
 
 }
@@ -240,7 +241,7 @@ const valideForm = {
 
     sendForm(name, email, message, valor) {
 
-        renderQrCode.qrCodeRender(valor)
+        
 
 
         let validateName = name;
@@ -272,6 +273,8 @@ const valideForm = {
         })
 
         toastr["success"]("Message sent")
+
+        renderQrCode.qrCodeRender(valor)
 
     }
 }

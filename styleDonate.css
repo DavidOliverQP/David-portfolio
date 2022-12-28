@@ -130,11 +130,13 @@
 }
 
 .qrcode-img{
-  
     margin-top: 5vh;
     width: 200px;
     margin-bottom: 5vh;
-   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .copyecut{

@@ -568,11 +568,6 @@ ul {
    
 }
 
-.experiences:first-child {
-    margin-top: 5vh;
-}
-
-
 
 .experience .line-experince-to-other {
     display: flex;
@@ -655,6 +650,13 @@ ul {
 
 .projects #mandalorian{
     background: linear-gradient(rgba(0, 0, 0, 0.11),black),url(https://camo.githubusercontent.com/97cc3da7cb09980b566cd6ff38f1d97c54a1c2ffb88ece7be7bf9c9575bd9ff2/68747470733a2f2f692e696d6775722e636f6d2f6a78545337496d2e706e67);
+    background-position: center;
+    background-size: cover;
+}
+
+.projects #aboutvalorant{
+    background: linear-gradient(rgba(0, 0, 0, 0.11),black),url(https://camo.githubusercontent.com/337a49de7e3422639ca34b6a5c17ef52a7f3007d7eee85452257035603e63680/68747470733a2f2f692e696d6775722e636f6d2f415254457454412e706e67);
+
     background-position: center;
     background-size: cover;
 }

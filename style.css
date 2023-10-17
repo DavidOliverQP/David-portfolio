@@ -435,20 +435,37 @@ ul {
 }
 
 #css {
-    width: 95%;
+    width: 100%;
     height: 100%;
     background-color: var(--third-color);
     border-radius: 5px;
 }
 
 #sass {
-    width: 80%;
+    width: 100%;
     height: 100%;
     background-color: var(--third-color);
 }
 
 #javascript {
-    width: 85%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--third-color);
+    border-radius: 5px;
+}
+
+#angular{
+
+    width: 88%;
+    height: 100%;
+    background-color: var(--third-color);
+    border-radius: 5px;
+
+
+}
+
+#vuejs{
+    width: 90%;
     height: 100%;
     background-color: var(--third-color);
     border-radius: 5px;
@@ -462,13 +479,20 @@ ul {
 }
 
 #php {
-    width: 90%;
+    width: 100%;
     height: 100%;
     background-color: var(--third-color);
     border-radius: 5px;
 }
 
 #react {
+    width: 90%;
+    height: 100%;
+    background-color: var(--third-color);
+    border-radius: 5px;
+}
+
+#mysqli{
     width: 90%;
     height: 100%;
     background-color: var(--third-color);
@@ -659,6 +683,20 @@ ul {
 
     background-position: center;
     background-size: cover;
+}
+
+.projects #rickrundown{
+    background: linear-gradient(rgba(0, 0, 0, 0.11),black),url(https://camo.githubusercontent.com/1407b64e8cd8ac98f2a93e19894e7e3cab2a0f1d700da8976e03cb58641389e5/68747470733a2f2f692e696d6775722e636f6d2f54415a6d7863512e706e67);
+    background-position: center;
+    background-size: cover;
+}
+
+.projects #pokeguide{
+
+    background: linear-gradient(rgba(0, 0, 0, 0.11),black),url(https://camo.githubusercontent.com/d8fa0adc89cda4d5d68cabc7e98f26d2540d4ec2633aeb78cd863a9475f4c1a4/68747470733a2f2f692e696d6775722e636f6d2f496d324c79716e2e6a7067);
+    background-position: center;
+    background-size: cover;
+
 }
 
 .contact{
